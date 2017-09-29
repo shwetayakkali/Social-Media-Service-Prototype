@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="/static/style.css" type="text/css">
+ 
+<form action="/register" method="POST"  enctype="multipart/form-data">
+	<div class="login">
+		<div class="login-screen">
+			<div class="app-title">
+				<h1>Register</h1>
+			</div>
+
+			<div class="login-form">
+				<div class="control-group">
+				<input type="text" class="login-field" value="" placeholder="username" name="username">
+				<label class="login-field-icon fui-user" for="register-name"></label>
+				</div>
+
+				<div class="control-group">
+				<input type="password" class="login-field" value="" placeholder="password" name="password">
+				<label class="login-field-icon fui-lock" for="register-pass"></label>
+				</div>
+
+                <div class="control-group">
+				<input type="text" class="login-field" value="" placeholder="email" name="email">
+				<label class="login-field-icon fui-lock" for="register-email"></label>
+				</div>
+
+                <div class="control-group">
+				<input type="text" class="login-field" value="" placeholder="name" name="name">
+				<label class="login-field-icon fui-lock" for="register-name"></label>
+				</div>
+
+                <div class="control-group">
+				<input type="text" class="login-field" value="" placeholder="status" name="status">
+				<label class="login-field-icon fui-lock" for="register-status"></label>
+				</div>
+
+                <div class="control-group">
+				<input type="file" name="image" value="Select Image" placeholder="Select Image">
+				<label class="login-field-icon fui-lock" for="register-image"></label>
+				</div>
+
+                <input type="submit" value="Register" class="btn btn-primary btn-large btn-block" >
+			    <br>
+				<input type="button" value="Log in" class="btn btn-primary btn-large btn-block" onclick="window.location.href='/'" >
+
+			</div>
+		</div>
+	</div>
+</form>

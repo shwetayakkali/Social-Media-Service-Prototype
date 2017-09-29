@@ -1,0 +1,30 @@
+<br><br>
+
+<center>INBOX
+<br><br>
+
+    <div style = "width:50% ; border:1px solid #ABCDEF ; border-radius:25px">
+    <br>
+    {% for s in rt.keys() %}
+
+        Friend Name : {{ rt[s]['fname'] }}  ||   Message :  {{ rt[s]['string'] }}
+        <br><br>
+
+    {% endfor %}
+    </div>
+    <br><br>
+    <div style = "width:50% ; border:1px solid #ABCDEF ; border-radius:25px">
+    <br>
+    {% for s in ri.keys() %}
+
+        Friend Name : {{ ri[s]['fname'] }}  ||   Image : <img src={{url_for('uploaded_file', filename=ri[s]['string'])}} height="42" width="42">
+        <br><br>
+
+    {% endfor %}
+    </div>
+
+<a href='/logout'>Logout</a>
+
+<a href='/'>home</a>
+
+</center>

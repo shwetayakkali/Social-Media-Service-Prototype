@@ -1,0 +1,49 @@
+
+
+
+<link rel="stylesheet" href="/static/style.css" type="text/css">
+
+
+	<div class="login">
+		<div class="login-screen">
+			<div class="app-title">
+				<h1>Profile</h1>
+			</div>
+
+			<div class="login-form">
+
+                <br>
+				<div class="app-title">
+				    NAME : {{d['name']}}
+				</div>
+
+                <br>
+
+				<div class="app-title">
+                    STATUS : {{d['status']}}
+                </div>
+
+                <br>
+
+                <div class="app-title">
+                    <img src={{url_for('uploaded_file', filename= d['dp'] )}} height="200" width="80%">
+                </div>
+
+                <br>
+
+                <div class="app-title">
+                    <input type="button" value="LOGOUT" class="btn btn-primary btn-large btn-block" onclick="window.location.href='/logout'" >
+                </div>
+                <br>
+
+                <form class="app-title" action="/friend/{{d['username']}}" method="POST">
+                    <input type="submit" value="FRIENDS" class="btn btn-primary btn-large btn-block" >
+                </form>
+
+                <form class="app-title" action="/inbox/{{d['username']}}" method="POST">
+                    <input type="submit" value="INBOX" class="btn btn-primary btn-large btn-block" >
+                </form>
+
+			</div>
+		</div>
+	</div>

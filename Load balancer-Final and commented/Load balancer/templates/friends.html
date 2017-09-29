@@ -1,0 +1,53 @@
+
+
+
+<link rel="stylesheet" href="/static/style.css" type="text/css">
+
+
+	<div class="login">
+		<div class="login-screen">
+			<div class="app-title">
+				<h1>Friends</h1>
+			</div>
+
+			<div class="login-form">
+                {% for friend in d.keys() %}
+                <div>
+                    <br>
+                    <div class="app-title">
+                        NAME : {{d[friend]['fname']}}
+                    </div>
+                    <br>
+                    <div class="app-title">
+                        STATUS : {{d[friend]['status']}}
+                    </div>
+                    <div class="app-title">
+                        <img src={{url_for('uploaded_file', filename= d[friend]['dp'] )}} height="120" width="50%">
+                    </div>
+                    <br>
+                    <div class="app-title">
+                        <form action="/sendMessage/{{d[friend]['fid']}}/{{d[friend]['fname']}}/{{uname}}" method="POST">
+                            <input type = "text" placeholder="Type message you wish to send" name = "msg" />
+                            <input type="submit" value="Send Message" >
+                        </form>
+                    </div>
+                    <br>
+                    <div class="app-title">
+                        <form action="/sendImage/{{d[friend]['fid']}}/{{d[friend]['fname']}}/{{uname}}" method="POST"  enctype="multipart/form-data">
+                            <input type="file" name="file" >
+                            <input type="submit" value="Send Image">
+                        </form>
+                    </div>
+
+                    <br>
+                </div>
+                {% endfor %}
+                <div class="app-title">
+                    <input type="button" value="LOGOUT" class="btn btn-primary btn-large btn-block" onclick="window.location.href='/logout'" >
+                    <br>
+                    <input type="button" value="HOME" class="btn btn-primary btn-large btn-block" onclick="window.location.href='/'" >
+                </div>
+
+			</div>
+		</div>
+	</div>
